@@ -115,14 +115,13 @@ void ATFT_GameModeBase::PostInitializeComponents()
 void ATFT_GameModeBase::BeginPlay()
 {
 	Super::BeginPlay();
-
     
     if (APlayerController* PC = UGameplayStatics::GetPlayerController(GetWorld(), 0))
     {
         FInputModeUIOnly InputMode;
-        InputMode.SetWidgetToFocus(JobSelectionWidgetInstance->TakeWidget());  // 포커스를 해당 UI로 설정
-        PC->SetInputMode(InputMode);  // 입력 모드 변경
-        PC->bShowMouseCursor = true;  // 마우스 커서 표시
+        InputMode.SetWidgetToFocus(JobSelectionWidgetInstance->TakeWidget());
+        PC->SetInputMode(InputMode);
+        PC->bShowMouseCursor = true;
     }
 }
 

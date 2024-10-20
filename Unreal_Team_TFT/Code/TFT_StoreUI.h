@@ -21,7 +21,9 @@ public:
 	virtual bool Initialize() override;
 
 	UFUNCTION()
-	void StoreOpenClose();
+	void StoreOpen();
+	UFUNCTION()
+	void StoreClose();
 
 	UFUNCTION()
 	void PurchaseItem();
@@ -72,7 +74,7 @@ private:
 	class UUniformGridPanel* Store_UniformGrid;
 
 	UPROPERTY()
-	bool bIsOpen = true;
+	bool bIsOpen = false;
 
 public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)

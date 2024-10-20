@@ -84,10 +84,10 @@ void UTFT_AggroComponent::AggroList()
 
         const float TimeToDisplay = 500.0f;
 
-        if (GEngine)
+        /*if (GEngine)
         {
             GEngine->AddOnScreenDebugMessage(MessageKey, TimeToDisplay, MessageColor, DebugMessage);
-        }
+        }*/
 
     }
 

@@ -42,6 +42,7 @@ public:
 	USphereComponent* _area;
 
 	bool _isOverlap = false;
+	bool _storecheke = false;
 
 	class ITFT_InteractionInterface* _interface = nullptr;
 };

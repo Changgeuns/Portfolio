@@ -13,7 +13,7 @@ HDC Program::backBuffer = nullptr;
 
 Program::Program()
 {
-	_scene = make_shared<MazeScene>();
+	_scene = make_shared<AlkaScene>();
 
 	HDC hdc = GetDC(hWnd);
 

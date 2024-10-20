@@ -86,7 +86,7 @@ bool UTFT_StoreUI::Initialize()
 		slotIndex++;
 	}
 
-	Exit_Button->OnClicked.AddDynamic(this, &UTFT_StoreUI::StoreOpenClose);
+	Exit_Button->OnClicked.AddDynamic(this, &UTFT_StoreUI::StoreClose);
 
 	Purchase_Button->OnClicked.AddDynamic(this, &UTFT_StoreUI::PurchaseItem);
 
@@ -101,7 +101,22 @@ bool UTFT_StoreUI::Initialize()
 	return abc;
 }
 
-void UTFT_StoreUI::StoreOpenClose()
+void UTFT_StoreUI::StoreOpen()
+{
+	if(bIsOpen == false)
+	{
+		UE_LOG(LogTemp, Log, TEXT("Store Open!!"));
+		SetVisibility(ESlateVisibility::Visible);
+		GetWorld()->GetFirstPlayerController()->bShowMouseCursor = true;
+		bIsOpen = true;
+
+		UIMANAGER->GetInvenUI()->storeCheke = bIsOpen;
+		UIMANAGER->GetInvenUI()->Store_DropSellTextCheck();
+		return;
+	}
+}
+
+void UTFT_StoreUI::StoreClose()
 {
 	if (bIsOpen == true)
 	{
@@ -110,18 +125,7 @@ void UTFT_StoreUI::StoreOpenClose()
 		GetWorld()->GetFirstPlayerController()->bShowMouseCursor = false;
 		bIsOpen = false;
 
-		UIMANAGER->GetInvenUI()->storeCheke = false;
-		UIMANAGER->GetInvenUI()->Store_DropSellTextCheck();
-		return;
-	}
-	else if(bIsOpen == false)
-	{
-		UE_LOG(LogTemp, Log, TEXT("Store Open!!"));
-		SetVisibility(ESlateVisibility::Visible);
-		GetWorld()->GetFirstPlayerController()->bShowMouseCursor = true;
-		bIsOpen = true;
-
-		UIMANAGER->GetInvenUI()->storeCheke = true;
+		UIMANAGER->GetInvenUI()->storeCheke = bIsOpen;
 		UIMANAGER->GetInvenUI()->Store_DropSellTextCheck();
 		return;
 	}

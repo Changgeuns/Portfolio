@@ -18,16 +18,9 @@ void Player::BeginPlay()
 {
 	_maze->SetPlayerPos(_pos);
 	_pos = _maze->GetStartPos();
-	//RightHand();
 	BFS(_pos);
 }
 
-//void Player::FindPath()
-//{
-//	// 실습
-//	// 우수법을 이용해서 미로를 끝점까지 가면 된다.
-//	// 찾은 길은 _path에다 넣는다.
-//}
 
 void Player::RightHand()
 {

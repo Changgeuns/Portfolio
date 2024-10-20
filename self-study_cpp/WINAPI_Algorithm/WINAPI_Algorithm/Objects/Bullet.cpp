@@ -21,11 +21,9 @@ void Bullet::Update()
 	_col->Update();
 	_col->_center += _direction * _speed;
 
-	// TODO(과제) : 중력적용
 	_col->_center += _downVector;
 	_downVector += Vector2(0, 1) * GRAVITY;
 
-	// TODO(과제) : 화면 밖으로 나갔을떄 지워주는 함수
 	// OutControll : 반사를 위한 함수
 	bool isout = IsOut();
 	//bool isout = false;
@@ -90,7 +88,6 @@ void Bullet::Attack_Cannon(shared_ptr<Cannon> cannon)
 	if(IsActive() == false)
 		return;
 
-	// cannon을 어떻게 공격할 것인가
 	// => cannon의 body
 	if (cannon->GetCollider()->IsCollision(_col))
 	{

@@ -98,15 +98,6 @@ void AlkaMap::IsCollision(shared_ptr<AlkaBall> ball)
 
 
 
-
-			/*Vector2 dir = ball->GetDirection();
-			if (rect->IsCollision(ball->GetCircleCollider()) == false) continue;
-			dir._y *= -1.0f;
-			ball->SetDirection(dir);
-			rect->DeedMove();*/
-
-
-
 		}
 	}
 }

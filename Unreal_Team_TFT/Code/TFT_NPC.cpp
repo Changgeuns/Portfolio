@@ -56,7 +56,7 @@ void ATFT_NPC::OnPlayerOverlapBegin(UPrimitiveComponent* OverlappedComponent, AA
 
 		_interface = Cast<ITFT_InteractionInterface>(OtherActor);
 		_isOverlap = true;
-		_storeCom->GetStoreUI()->StoreOpenClose();
+		_storeCom->GetStoreUI()->StoreOpen();
 	}
 }
 
@@ -68,7 +68,7 @@ void ATFT_NPC::OnPlayerOverlapEnd(UPrimitiveComponent* OverlappedComponent, AAct
 	{
 		_interface = nullptr;
 		_isOverlap = false;
-		_storeCom->GetStoreUI()->StoreOpenClose();
+		_storeCom->GetStoreUI()->StoreClose();
 	}
 }
 
